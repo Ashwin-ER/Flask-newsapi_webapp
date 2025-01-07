@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask BBC News</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Custom styles */
+        .news-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .news-item h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .news-item h4 {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+        }
+
+        .jumbotron h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="jumbotron">
+    <h1>Flask-News Web Application</h1>
+</div>
+
+<div class="container">
+    {% for new, des, i in context %}
+    <div class="news-item">
+        <img src="{{i}}" alt="News Image">
+        <h3>News: {{new}}</h3>
+        <h4>Description: {{des}}</h4>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
